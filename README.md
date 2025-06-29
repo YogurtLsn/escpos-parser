@@ -1,5 +1,7 @@
 # ESC/POS 解析器
 
+[English](README_EN.md) | 中文
+
 一个基于Node.js的ESC/POS打印机指令全解析工具，可以将ESC/POS格式的二进制数据或十六进制字符串解析为可读的格式。
 
 ## 功能特点
