@@ -1,0 +1,40 @@
+{
+  "name": "escpos-parser",
+  "version": "1.0.0",
+  "description": "一个基于Node.js的ESC/POS打印机指令全解析工具，可以将ESC/POS格式的二进制数据或十六进制字符串解析为可读的格式",
+  "main": "lib/parser.js",
+  "bin": {
+    "escpos": "./bin/escpos.js"
+  },
+  "scripts": {
+    "test": "node test/test.js",
+    "parse": "node bin/escpos.js"
+  },
+  "keywords": [
+    "escpos",
+    "parser",
+    "printer",
+    "receipt",
+    "pos",
+    "thermal",
+    "gbk",
+    "utf8"
+  ],
+  "author": "lanilee0717@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "iconv-lite": "^0.6.3",
+    "commander": "^11.0.0"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YogurtLsn/escpos-parser.git"
+  },
+  "bugs": {
+    "url": "https://github.com/YogurtLsn/escpos-parser/issues"
+  },
+  "homepage": "https://github.com/YogurtLsn/escpos-parser#readme"
+}
