@@ -8,11 +8,15 @@
 const { program } = require('commander');
 const { parseHexString, parseFile, generateReport } = require('../lib/parser');
 const fs = require('fs');
+const path = require('path');
+
+// 从package.json中读取版本号
+const packageJson = require(path.join(__dirname, '../package.json'));
 
 program
   .name('escpos')
   .description('ESC/POS 打印机指令解析工具')
-  .version('1.0.0');
+  .version(packageJson.version);
 
 // 直接解析16进制字符串
 program
