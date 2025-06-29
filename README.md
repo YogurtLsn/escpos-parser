@@ -17,55 +17,42 @@
 ### 全局安装
 
 ```bash
-npm install -g escpos-parser
+npm install -g print-escpos-parser
 ```
 
 ### 本地安装
 
 ```bash
-npm install escpos-parser
+npm install print-escpos-parser
 ```
 
 ## 使用方法
 
 ### 命令行使用
 
-统一命令行工具提供了多种灵活的使用方式：
+安装后，你可以使用 `escpos` 命令：
 
 ```bash
-# 直接解析16进制字符串
-escpos 1B401B610148656C6C6F20576F726C640A
+# 解析16进制字符串并输出格式化文本
+escpos -h "1B401B610148656C6C6F20576F726C640A" --format text
 
-# 从文件读取数据
-escpos -f receipt.bin
+# 解析16进制文件并输出格式化文本
+escpos -f data.hex --format text
 
-# 从16进制文件读取，只输出格式化文本
-escpos -f receipt.hex --format text
+# 解析16进制字符串并输出JSON格式结果
+escpos -h "1B401B610148656C6C6F20576F726C640A" --format json
 
-# 使用GBK编码解析并输出到文件
-escpos -h "1B401B610148656C6C6F20576F726C640A" -e gbk -o result.json
-
-# 输出JSON格式的解析结果
-escpos -h "1B401B610148656C6C6F20576F726C640A" --format json -o result.json
-
-# 只输出格式化后的打印内容
+# 解析二进制文件并输出格式化文本
 escpos -f receipt.bin --format text
 
 # 显示帮助信息
-escpos --help-examples
-```
-
-### 通过npm脚本使用
-
-```bash
-# 解析16进制字符串
-npm run parse 1B401B610148656C6C6F20576F726C640A
+escpos --help
 ```
 
 ### API使用
 
 ```javascript
-const { parseHexString, parseFile } = require('escpos-parser');
+const { parseHexString, parseFile } = require('print-escpos-parser');
 
 // 解析16进制字符串（可带或不带空格）
 const hexString = "1B401B610148656C6C6F20576F726C640A";
